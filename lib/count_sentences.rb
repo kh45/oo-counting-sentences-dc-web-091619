@@ -16,8 +16,8 @@ class String
   end
 
   def count_sentences
-    punctuation = [".", "!", "?"]
-    self.split(" ").count
-
-  end
+    sentence = self.split(/[?.!]/).select{|frag|
+      frag if frag.length > 1 }
+    sentence.count
+end
 end
